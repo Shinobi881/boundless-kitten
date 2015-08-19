@@ -38,7 +38,12 @@ var AppModel = Backbone.Model.extend({
 });
 
 //defining a model for a song
-var SongModel = Backbone.Model.extend({});
+var SongModel = Backbone.Model.extend({
+  // Tag info (title, artist...)
+  // BPM
+  // default Playback rate
+    // https://developer.mozilla.org/en-US/Apps/Build/Audio_and_video_delivery/WebAudio_playbackRate_explained
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                                               COLLECTIONS  //
@@ -277,6 +282,10 @@ var PlayerView = Backbone.View.extend({
   //'AppView' is listening for 'setVolume' to fire
   setVolume: function(value) {
     this.$el.prop("volume", value);
+  },
+
+  playRate: function (value){
+    this.$el.prop("playbackRate", value);
   },
 
   //render the view for the player and get the song from the server
