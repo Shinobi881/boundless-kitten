@@ -531,8 +531,10 @@ var SetStartButtonView = Backbone.View.extend({
 var SliderView = Backbone.View.extend({
   //create the slider element and declare a range which will help with 'setVolume' method in 'PlayerView'
   el: '<input id="slider" type="range" min="-1" max="1" step="0.1"></input>',
+  
   initialize: function(container) {
     //append the slider, and invoke the callback on any crossfader movement by the user
+    
     container.append(this.$el);
     this.$el.on('input', function() {
       this.trigger('x-fade', this.$el.val());
